@@ -8,7 +8,7 @@ class StoredExpense():
     id: int
     amount: float
     location: str
-    datetime: datetime 
+    datetime: datetime
 
 def store_expense (amount: float, location: str, dt: datetime = datetime.now(pytz.utc)) -> StoredExpense:
 

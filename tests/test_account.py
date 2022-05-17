@@ -5,6 +5,7 @@ import pytz
 from random import uniform
 from moneycop.account import StoredExpense, store_expense
 from datetime import datetime
+from operator import attrgetter
 
 def test_store_expense():
     amount = uniform(1, 100)
@@ -13,7 +14,8 @@ def test_store_expense():
     dt = datetime.now(pytz.utc)
     created = StoredExpense(uniform(1,10), amount=amount, location=location, datetime=dt)
     expected = store_expense(amount=amount, location=location, dt=dt)
+    
+    cr_values = attrgetter('amount', 'location','datetime') (created)
+    exp_values = attrgetter('amount', 'location','datetime') (expected)
 
-    assert created.amount == expected.amount and \
-           created.location == expected.location and  \
-           created.datetime == expected.datetime    
+    assert cr_values == exp_values  

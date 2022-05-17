@@ -10,7 +10,6 @@ app = FastAPI()
 def read_root():
     return {"Hello": "I'am Moneycop backend! Check out my API Doc on my /docs URL"}
 
-
 class Expense(BaseModel):
     amount: float
     location: str
@@ -21,7 +20,7 @@ class ExpenseRes(BaseModel):
     datetime: datetime
 
 @app.post("/expense")
-def read_root(expense: Expense):
+def add_expense(expense: Expense):
     stored_exp = store_expense(expense.amount, expense.location)
     user_timezone = 'Europe/Rome'
     user_datetime = stored_exp.datetime.astimezone(tz=timezone(user_timezone))
