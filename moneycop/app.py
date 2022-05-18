@@ -1,6 +1,6 @@
 from datetime import datetime
 from pytz import timezone
-from moneycop.account import AccountManager, StoredExpense, store_expense
+from moneycop.account import AccountManager
 from fastapi import FastAPI
 from pydantic import BaseModel
 

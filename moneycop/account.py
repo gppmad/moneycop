@@ -1,7 +1,6 @@
 from attr import dataclass
 import pytz
 from datetime import datetime, tzinfo
-from moneycop.db import save_expense
 from moneycop.storage import Storage
 
 
@@ -11,17 +10,6 @@ class StoredExpense():
     amount: float
     location: str
     datetime: datetime
-
-
-def store_expense(amount: float, location: str, dt: datetime = datetime.now(pytz.utc)) -> StoredExpense:
-
-    try:
-        res = save_expense(amount, location, dt)
-        return StoredExpense(res[0], amount, location, dt) if res else None
-
-    except Exception as e:
-        print(e)
-        raise e
 
 
 class AccountManager():
