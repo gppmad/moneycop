@@ -10,10 +10,11 @@ prod = "moneycop.app:prod"
 
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "3.8.12"
 fastapi = {extras = ["all"], version = "^0.78.0"}
 uvicorn = {extras = ["standard"], version = "^0.17.6"}
 pytz = "^2022.1"
+attr = "^0.3.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
