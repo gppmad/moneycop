@@ -6,10 +6,10 @@ This is the home of Moneycop backend which allows you to keep track of your expe
 ```
 git clone && cd moneycop
 poetry shell && poetry install
-uvicorn moneycop.app:app
+poetry run dev
 ```
 
 ## How to run test
 ```
-pytest -s --asyncio-mode=strict
+poetry run pytest
 ```
