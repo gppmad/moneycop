@@ -1,5 +1,7 @@
 from datetime import datetime
+from imp import reload
 from pytz import timezone
+import uvicorn
 from moneycop.account import AccountManager
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -7,6 +9,14 @@ from pydantic import BaseModel
 from moneycop.db import MapDB
 
 app = FastAPI()
+
+def dev():
+    """Launched with `poetry run start_prod` at root level"""
+    uvicorn.run("moneycop.app:app", host="0.0.0.0", port=8000, reload=True)
+
+def prod():
+    """Launched with `poetry run start_prod` at root level"""
+    uvicorn.run("moneycop.app:app", host="0.0.0.0", port=8000)
 
 @app.get("/")
 def read_root():

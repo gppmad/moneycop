@@ -4,6 +4,11 @@ version = "0.1.0"
 description = ""
 authors = ["Giuseppe Maddiona <giuseppe.maddiona@gmail.com>"]
 
+[tool.poetry.scripts]
+dev = "moneycop.app:dev"
+prod = "moneycop.app:prod"
+
+
 [tool.poetry.dependencies]
 python = "^3.8"
 fastapi = {extras = ["all"], version = "^0.78.0"}
