@@ -4,8 +4,13 @@ version = "0.1.0"
 description = ""
 authors = ["Giuseppe Maddiona <giuseppe.maddiona@gmail.com>"]
 
+[tool.poetry.scripts]
+dev = "moneycop.app:dev"
+prod = "moneycop.app:prod"
+
+
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "3.8.12"
 fastapi = {extras = ["all"], version = "^0.78.0"}
 uvicorn = {extras = ["standard"], version = "^0.17.6"}
 pytz = "^2022.1"
