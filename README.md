@@ -9,7 +9,7 @@ poetry shell && poetry install
 poetry run dev
 ```
 
-## How to run test
+## How to run test - to remove
 ```
 poetry run pytest
 ```
