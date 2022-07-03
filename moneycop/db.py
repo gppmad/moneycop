@@ -4,6 +4,6 @@ from moneycop.storage import Storage
 from typing import List
 
 class MapDB(Storage):
-    def save(self, amount:float , location:str, date: datetime) -> List:
+    def save(self, amount:float , location:str, dt: datetime) -> List:
         exp_id = 20
         return [exp_id, amount, location]

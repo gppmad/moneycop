@@ -1,6 +1,6 @@
 from attr import dataclass
 import pytz
-from datetime import datetime, tzinfo
+from datetime import datetime
 from moneycop.storage import Storage
 
 
